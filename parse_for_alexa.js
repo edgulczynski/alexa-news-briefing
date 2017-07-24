@@ -18,7 +18,7 @@ request.get({
     };
     return parsedRecord;
   }
-  alexaFeed = body.results.map(parseForAlexa);
+  alexaFeed = body.results.slice(0,4).map(parseForAlexa);
   fs.writeFile("docs/home.json", JSON.stringify(alexaFeed));
 });
 
